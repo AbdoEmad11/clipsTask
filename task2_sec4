@@ -1,0 +1,18 @@
+         CLIPS (6.30 3/17/15)
+CLIPS> (deftemplate person
+   (multislot name
+      (type SYMBOL STRING) 
+      (cardinality 2 4)
+   )
+   (slot age
+      (type INTEGER) 
+      (range 20 25)    
+   )
+)
+CLIPS> (assert (person (name Ali Ahmed) (age 22)))
+<Fact-1>
+CLIPS> (facts)
+f-0     (initial-fact)
+f-1     (person (name Ali Ahmed) (age 22))
+For a total of 2 facts.
+CLIPS> 
