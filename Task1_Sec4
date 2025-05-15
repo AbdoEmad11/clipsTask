@@ -1,0 +1,15 @@
+         CLIPS (6.30 3/17/15)
+CLIPS> (deftemplate person
+   (slot name)
+   (slot hair)
+)
+CLIPS> (defrule check_color
+   (person (name ?name) (hair ?color&~black&~brown))
+   =>
+   (printout t ?name " has " ?color " hair" crlf)
+)
+CLIPS> (assert(person(name Ali)(hair Red)))
+<Fact-1>
+CLIPS> (run)
+Ali has Red hair
+CLIPS> 
